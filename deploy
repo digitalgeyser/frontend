@@ -1,0 +1,11 @@
+#!/bin/bash
+USER=$DG_FTP_USERNAME
+PASSWORD=$DG_FTP_PASSWORD
+
+ftp -n -v digitalgeyser.com <<EOF
+quote USER $USER
+quote PASS $PASSWORD
+bin
+put index.html 
+quit
+EOF
