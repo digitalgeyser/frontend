@@ -23,8 +23,8 @@
         and strategies that transform how organizations operate, compete, and grow.
       </p>
       <div class="hero-ctas">
-        <a href="#research" class="btn-primary" @click.prevent="scrollTo('research')">
-          Explore Our Research
+        <a href="#services" class="btn-primary" @click.prevent="scrollTo('services')">
+          Explore Our Services
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
             <path d="M1 7h12M8 3l5 4-5 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>

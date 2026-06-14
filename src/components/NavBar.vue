@@ -51,7 +51,6 @@ const menuOpen = ref(false)
 const links = [
   { id: 'about', label: 'About' },
   { id: 'services', label: 'Services' },
-  { id: 'research', label: 'Research' },
   { id: 'process', label: 'Process' },
 ]
 

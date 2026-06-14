@@ -30,12 +30,6 @@
           <a href="#contact" @click.prevent="scrollTo('contact')">Contact</a>
         </div>
         <div class="link-group">
-          <h4>Research</h4>
-          <a href="#research" @click.prevent="scrollTo('research')">Publications</a>
-          <a href="#research" @click.prevent="scrollTo('research')">Open Source</a>
-          <a href="#research" @click.prevent="scrollTo('research')">Blog</a>
-        </div>
-        <div class="link-group">
           <h4>Connect</h4>
           <a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
           <a href="https://github.com" target="_blank" rel="noopener">GitHub</a>
