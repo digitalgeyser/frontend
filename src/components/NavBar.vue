@@ -2,7 +2,7 @@
   <header :class="['navbar', { scrolled }]">
     <div class="container nav-inner">
       <!-- Logo -->
-      <a href="#hero" class="logo" @click.prevent="scrollTo('hero')">
+      <a href="#hero" class="logo" @click.prevent="triggerSplash">
         <svg width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true">
           <circle cx="15" cy="22" r="5" stroke="url(#ng)" stroke-width="1.5" fill="none"/>
           <line x1="15" y1="17" x2="15" y2="4" stroke="url(#ng)" stroke-width="2" stroke-linecap="round"/>
@@ -34,6 +34,31 @@
       </div>
     </div>
 
+    <!-- Splash overlay -->
+    <Teleport to="body">
+      <div v-if="showSplash" :class="['splash-overlay', { leaving: splashLeaving }]" @click="dismissSplash">
+        <div class="splash-content" :class="{ leaving: splashLeaving }">
+          <svg width="100" height="100" viewBox="0 0 30 30" fill="none" aria-hidden="true">
+            <circle cx="15" cy="22" r="5" stroke="url(#ng2)" stroke-width="1.5" fill="none"/>
+            <line x1="15" y1="17" x2="15" y2="4" stroke="url(#ng2)" stroke-width="2" stroke-linecap="round"/>
+            <line x1="13.5" y1="11" x2="8" y2="5" stroke="#a5b4fc" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
+            <line x1="16.5" y1="11" x2="22" y2="5" stroke="#f472b6" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
+            <circle cx="15" cy="3" r="1.8" fill="url(#ng2)"/>
+            <circle cx="7" cy="4.5" r="1.1" fill="#a5b4fc" opacity="0.6"/>
+            <circle cx="23" cy="4.5" r="1.1" fill="#f472b6" opacity="0.6"/>
+            <defs>
+              <linearGradient id="ng2" x1="0" y1="1" x2="0" y2="0" gradientUnits="objectBoundingBox">
+                <stop offset="0%" stop-color="#6366f1"/>
+                <stop offset="100%" stop-color="#ec4899"/>
+              </linearGradient>
+            </defs>
+          </svg>
+          <div class="splash-logo-text">Digital <span class="logo-accent">Geyser</span></div>
+          <div class="splash-quip">Future is now!</div>
+        </div>
+      </div>
+    </Teleport>
+
     <!-- Mobile menu -->
     <div class="mobile-menu" :class="{ open: menuOpen }">
       <a v-for="link in links" :key="link.id" href="#" @click.prevent="scrollTo(link.id)">{{ link.label }}</a>
@@ -47,6 +72,9 @@ import { ref, onMounted, onUnmounted } from 'vue'
 
 const scrolled = ref(false)
 const menuOpen = ref(false)
+const showSplash = ref(false)
+const splashLeaving = ref(false)
+let splashTimer = null
 
 const links = [
   { id: 'about', label: 'About' },
@@ -67,8 +95,29 @@ function scrollTo(id) {
   document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
 }
 
+function triggerSplash() {
+  if (showSplash.value) return
+  splashLeaving.value = false
+  showSplash.value = true
+  clearTimeout(splashTimer)
+  splashTimer = setTimeout(dismissSplash, 2200)
+}
+
+function dismissSplash() {
+  clearTimeout(splashTimer)
+  splashLeaving.value = true
+  splashTimer = setTimeout(() => {
+    showSplash.value = false
+    splashLeaving.value = false
+    scrollTo('hero')
+  }, 350)
+}
+
 onMounted(() => window.addEventListener('scroll', onScroll, { passive: true }))
-onUnmounted(() => window.removeEventListener('scroll', onScroll))
+onUnmounted(() => {
+  window.removeEventListener('scroll', onScroll)
+  clearTimeout(splashTimer)
+})
 </script>
 
 <style scoped>
@@ -224,5 +273,73 @@ onUnmounted(() => window.removeEventListener('scroll', onScroll))
   .hamburger { display: flex; }
   .mobile-menu { display: flex; }
   .nav-cta .btn-primary { display: none; }
+}
+
+/* Splash overlay */
+.splash-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(10, 10, 16, 0.72);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  cursor: pointer;
+  animation: splash-bg-in 0.25s ease forwards;
+}
+
+.splash-overlay.leaving {
+  animation: splash-bg-out 0.35s ease forwards;
+}
+
+.splash-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  animation: balloon-in 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  text-align: center;
+}
+
+.splash-content.leaving {
+  animation: balloon-out 0.35s ease forwards;
+}
+
+.splash-logo-text {
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--text, #fff);
+  line-height: 1;
+}
+
+.splash-quip {
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.6);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+@keyframes balloon-in {
+  from { opacity: 0; transform: scale(0.15); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes balloon-out {
+  from { opacity: 1; transform: scale(1); }
+  to   { opacity: 0; transform: scale(0.6); }
+}
+
+@keyframes splash-bg-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes splash-bg-out {
+  from { opacity: 1; }
+  to   { opacity: 0; }
 }
 </style>
