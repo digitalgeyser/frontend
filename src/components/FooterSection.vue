@@ -18,22 +18,18 @@
           </svg>
           <span class="logo-text">Digital <span class="logo-accent">Geyser</span></span>
         </a>
-        <p class="brand-sub">AI Research &amp; Consulting.<br>Where intelligence erupts.</p>
+        <p class="brand-sub">Your AI Companion.<br>One model. One person. Forever.</p>
       </div>
 
       <div class="footer-links">
         <div class="link-group">
           <h4>Company</h4>
           <a href="#about" @click.prevent="scrollTo('about')">About Us</a>
-          <a href="#services" @click.prevent="scrollTo('services')">Services</a>
-          <a href="#process" @click.prevent="scrollTo('process')">Our Process</a>
-          <a href="#contact" @click.prevent="scrollTo('contact')">Contact</a>
-        </div>
-        <div class="link-group">
-          <h4>Connect</h4>
-          <a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
-          <a href="https://github.com" target="_blank" rel="noopener">GitHub</a>
-          <a href="https://twitter.com" target="_blank" rel="noopener">X / Twitter</a>
+          <a href="#learn" @click.prevent="scrollTo('learn')">How It Learns</a>
+          <a href="#products" @click.prevent="scrollTo('products')">Products</a>
+          <a href="#process" @click.prevent="scrollTo('process')">How It Works</a>
+          <a href="#cloud" @click.prevent="scrollTo('cloud')">Cloud Services</a>
+          <a href="#contact" @click.prevent="scrollTo('contact')">Get One</a>
         </div>
       </div>
     </div>

@@ -6,20 +6,25 @@
         <div class="about-copy">
           <span class="section-badge">About</span>
           <h2 class="section-title" :class="['animate-up', isInView ? 'in-view' : '']">
-            The Force<br>
-            <span class="gradient-text">Below the Surface</span>
+            One Model.<br>
+            <span class="gradient-text">One Person. Forever.</span>
           </h2>
           <p class="section-sub" :class="['animate-up d1', isInView ? 'in-view' : '']">
-            Most AI projects fail not because the technology doesn't exist — but because
-            the gap between research and reality is never bridged. Digital Geyser
-            was founded to close that gap.
+            Every AI you've ever used forgets you the moment you close the tab.
+            Digital Geyser believes in something else: every person deserves an AI
+            that actually knows them — not a generic assistant, but a mind
+            that has grown alongside them and remembers who they are.
           </p>
           <p class="section-sub about-p2" :class="['animate-up d2', isInView ? 'in-view' : '']">
-            We're a team of ML researchers, systems engineers, and strategic advisors
-            who have lived on both sides: the cutting edge of academic research and the
-            messy reality of production systems. Just as a geyser channels underground
-            heat into a surface eruption, we channel deep expertise into results
-            organizations can actually see and feel.
+            Companion is a home server that runs private, dedicated AI models for each
+            family member — one model per person, never shared. The models stay at home.
+            They do not need the internet to operate, only your home network when you
+            are in the house. When you travel, a secure cloud proxy carries your
+            conversation to your home model and brings its response back, so you can
+            reach it from your phone or laptop wherever you are. Just a quiet box on
+            your shelf, holding intelligences that are entirely, irreversibly theirs —
+            each building context month by month, retraining on lived experience, and
+            becoming more deeply personal with every passing year.
           </p>
         </div>
 
@@ -44,10 +49,10 @@ import { useInView } from '../composables/useInView.js'
 const { rootRef, isInView } = useInView()
 
 const stats = [
-  { value: '12+', label: 'Years of Research', desc: 'Combined expertise across NLP, CV, and RL' },
-  { value: '200+', label: 'Models Deployed', desc: 'Production AI systems across industries' },
-  { value: '40+', label: 'Enterprise Partners', desc: 'From seed-stage startups to Fortune 500' },
-  { value: '$2B+', label: 'Client Value Created', desc: 'Measurable impact attributed to our work' },
+  { value: '1', label: 'Model Per Person', desc: 'Dedicated, private, and never shared — even within a family' },
+  { value: '~30d', label: 'Retraining Cycle', desc: 'Context built over a month becomes the next evolution of each model' },
+  { value: '100%', label: 'On-Device', desc: 'Models stay at home. They only need your home network to run — no internet required' },
+  { value: '∞', label: 'Lifelong Growth', desc: 'The sooner it starts, the deeper it grows — but it is never too late to begin' },
 ]
 </script>
 

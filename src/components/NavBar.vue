@@ -27,7 +27,7 @@
       </nav>
 
       <div class="nav-cta">
-        <a href="#contact" class="btn-primary" @click.prevent="scrollTo('contact')">Get in Touch</a>
+        <a href="#contact" class="btn-primary" @click.prevent="scrollTo('contact')">Get One</a>
         <button class="hamburger" :class="{ open: menuOpen }" @click="toggleMenu" aria-label="Toggle menu">
           <span/><span/><span/>
         </button>
@@ -54,7 +54,7 @@
             </defs>
           </svg>
           <div class="splash-logo-text">Digital <span class="logo-accent">Geyser</span></div>
-          <div class="splash-quip">Future is now!</div>
+          <div class="splash-quip">One Model. One Person. Forever.</div>
         </div>
       </div>
     </Teleport>
@@ -62,7 +62,7 @@
     <!-- Mobile menu -->
     <div class="mobile-menu" :class="{ open: menuOpen }">
       <a v-for="link in links" :key="link.id" href="#" @click.prevent="scrollTo(link.id)">{{ link.label }}</a>
-      <a href="#contact" class="btn-primary mobile-cta" @click.prevent="scrollTo('contact')">Get in Touch</a>
+      <a href="#contact" class="btn-primary mobile-cta" @click.prevent="scrollTo('contact')">Get One</a>
     </div>
   </header>
 </template>
@@ -78,8 +78,10 @@ let splashTimer = null
 
 const links = [
   { id: 'about', label: 'About' },
-  { id: 'services', label: 'Services' },
-  { id: 'process', label: 'Process' },
+  { id: 'learn', label: 'How It Learns' },
+  { id: 'products', label: 'Products' },
+  { id: 'process', label: 'How It Works' },
+  { id: 'cloud', label: 'Cloud Services' },
 ]
 
 function onScroll() {

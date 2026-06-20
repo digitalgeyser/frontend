@@ -12,24 +12,24 @@
     <!-- Content -->
     <div class="container hero-content">
       <div class="badge-row">
-        <span class="section-badge">AI Research &amp; Consulting</span>
+        <span class="section-badge">Your AI Companion</span>
       </div>
       <h1 class="hero-title">
-        <span class="gradient-text">Intelligence Erupts.</span><br>
-        Strategies Flow.
+        <span class="gradient-text">Born Together.</span><br>
+        Grown Together.
       </h1>
       <p class="hero-sub">
-        Digital Geyser channels deep machine learning research into AI systems
-        and strategies that transform how organizations operate, compete, and grow.
+        Companion is a home AI server that gives every family member a personal model.
+        It learns, evolves, and remembers alongside them — for a lifetime.
       </p>
       <div class="hero-ctas">
-        <a href="#services" class="btn-primary" @click.prevent="scrollTo('services')">
-          Explore Our Services
+        <a href="#products" class="btn-primary" @click.prevent="scrollTo('products')">
+          Explore the Product
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
             <path d="M1 7h12M8 3l5 4-5 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </a>
-        <a href="#contact" class="btn-secondary" @click.prevent="scrollTo('contact')">Work With Us</a>
+        <a href="#contact" class="btn-secondary" @click.prevent="scrollTo('contact')">How to Get One</a>
       </div>
 
       <div class="scroll-hint" aria-hidden="true">
