@@ -6,25 +6,27 @@
 
         <div class="contact-inner" :class="['animate-up', isInView ? 'in-view' : '']">
           <div class="contact-copy">
-            <span class="section-badge">Contact</span>
+            <span class="section-badge">How Can I Get One?</span>
             <h2 class="section-title">
-              Ready to Tap Into <span class="gradient-text">AI?</span>
+              Coming <span class="gradient-text">Soon</span>
             </h2>
             <p class="section-sub">
-              We don't do cold proposals. Every engagement starts with a real
-              conversation about your challenges and what's actually possible.
+              Companion — both the hardware and the software — is currently in development.
+              We are working hard to bring it to families as soon as possible.
+              If you would like to be notified when it becomes available, reach out and we
+              will make sure you are among the first to know.
             </p>
           </div>
 
           <div class="contact-cta">
-            <p class="cta-label">Reach us directly at</p>
+            <p class="cta-label">Get in touch at</p>
             <a href="mailto:info@digitalgeyser.com" class="email-link">
               <div class="email-icon">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
               </div>
               info@digitalgeyser.com
             </a>
-            <p class="response-note">We typically respond within 24 hours.</p>
+            <p class="response-note">We respond within 24 hours.</p>
           </div>
         </div>
       </div>
